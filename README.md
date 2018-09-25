@@ -25,13 +25,12 @@ If you use the code, please cite the following paper:
 
 ## Getting started
 ---
-### Document BoW extraction
-For top-$n$ documents, 
+
 ### Training data preparation
 To capture the top-k terms from top-n documents, one needs to extract the document frequency of each terms from index. Later, you are required to generate the similarity matrix between the query and document given the pre-trained word embedding (e.g. word2vec). Related functions can be found in preprocess/prepare_d2d.py.
 
 ### Training meta data preparation
-We create two classes for the ease to 
+We create two classes for the ease to training. The class **Relevance** incorporate the relevance information from the baseline and qrels file. The class **Result** simplify the write and read operation on TREC-formatted result file. Other information like query idf is dumped as a pickle file.
 
 ### 
 ### Model training
