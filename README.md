@@ -41,7 +41,7 @@ python MODEL.py --fold fold_number temp_file_path
 ```
 You need to run 5-fold cross valiation. The temp file is a temporary file to write the result of the validation set in TREC format.
 ### Evaluation
-After training, the evaluation result of each fold is retained in the result path as you specify in the MODEL_config.py file. One can simply run $$ cat *res >> merge_file $$ to merge results from all folds. Afterwards, run the [trec_eval](https://trec.nist.gov/trec_eval/) script to evaluate your model.
+After training, the evaluation result of each fold is retained in the result path as you specify in the MODEL_config.py file. One can simply run `cat *res >> merge_file` to merge results from all folds. Afterwards, run the [trec_eval](https://trec.nist.gov/trec_eval/) script to evaluate your model.
 
 
 ## Reference
