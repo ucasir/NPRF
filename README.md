@@ -15,3 +15,7 @@ If you use the code, please cite the following paper:
   year={2018}
 }
 ```
+
+
+## Reference
+Some snippets of the code follow the implementation of [K-NRM](https://github.com/AdeDZY/K-NRM), [MatchZoo](https://github.com/faneshion/MatchZoo).
