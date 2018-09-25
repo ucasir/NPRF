@@ -10,7 +10,7 @@ If you use the code, please cite the following paper:
 ```
 @inproceedings{li2018nprf,
   title={NPRF: A Neural Pseudo Relevance Feedback Framework for Ad-hoc Information Retrieval},
-  author={Canjia Li, Yingfei Sun, Ben He, Le Wang, Kai Hui, Andrew Yates, Le Sun, Jungang Xu},
+  author={Li, Canjia and Sun, Yingfei and He, Ben and Wang, Le and Hui, Kai and Yates, Andrew and Sun, Le and Xu, Jungang},
   booktitle={Proceedings of the 2018 Conference on Empirical Methods in Natural Language Processing},
   year={2018}
 }
