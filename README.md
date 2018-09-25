@@ -28,7 +28,7 @@ If you use the code, please cite the following paper:
 ### Document BoW extraction
 For top-$n$ documents, 
 ### Training data preparation
-To capture the top-$k$ terms from top-$n$ documents, one needs to extract the document frequency of each terms from index. Later, you are required to generate the similarity matrix between the query and document given the pre-trained word embedding (e.g. word2vec). Related functions can be found in preprocess/prepare_d2d.py.
+To capture the top-k terms from top-n documents, one needs to extract the document frequency of each terms from index. Later, you are required to generate the similarity matrix between the query and document given the pre-trained word embedding (e.g. word2vec). Related functions can be found in preprocess/prepare_d2d.py.
 
 ### Training meta data preparation
 We create two classes for the ease to 
