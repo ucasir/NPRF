@@ -17,14 +17,13 @@ If you use the code, please cite the following paper:
 ```
 
 ## Requirement
----
+
 * Tensorflow
 * Keras
 * gensim
 * numpy
 
 ## Getting started
----
 
 ### Training data preparation
 To capture the top-k terms from top-n documents, one needs to extract the document frequency of each terms from index. Later, you are required to generate the similarity matrix between the query and document given the pre-trained word embedding (e.g. word2vec). Related functions can be found in preprocess/prepare_d2d.py.
@@ -32,7 +31,7 @@ To capture the top-k terms from top-n documents, one needs to extract the docume
 ### Training meta data preparation
 We create two classes for the ease to training. The class **Relevance** incorporate the relevance information from the baseline and qrels file. The class **Result** simplify the write and read operation on TREC-formatted result file. Other information like query idf is dumped as a pickle file.
 
-### 
+
 ### Model training
 Configure the MODEL_config.py file, then run 
 ```
@@ -44,5 +43,5 @@ After training, the evaluation result of each fold is retained in the result pat
 
 
 ## Reference
----
+
 Some snippets of the code follow the implementation of [K-NRM](https://github.com/AdeDZY/K-NRM), [MatchZoo](https://github.com/faneshion/MatchZoo).
