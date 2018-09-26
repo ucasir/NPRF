@@ -5,7 +5,7 @@ import sys
 import subprocess
 from scipy import stats
 
-parent_path = '/home/lcj/tool/IREvaluation'
+parent_path = 'your_parent_path'
 trec_eval_script_path = os.path.join(parent_path, 'trec_eval.9.0/trec_eval')
 
 
