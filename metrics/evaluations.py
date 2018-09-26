@@ -5,12 +5,8 @@ import sys
 import subprocess
 from scipy import stats
 
-import numpy as np
-
-parent_path = '/home/lcj/tool/IREvaluation'
-letor_eval_scrpit_path = os.path.join(parent_path, 'Eval-Score-4.0.pl')
+parent_path = 'your_parent_path'
 trec_eval_script_path = os.path.join(parent_path, 'trec_eval.9.0/trec_eval')
-gd_eval_script_path = os.path.join(parent_path, "gdeval.pl")
 
 
 def run(command, get_ouput=False):
@@ -25,26 +21,12 @@ def run(command, get_ouput=False):
   except subprocess.CalledProcessError as e:
     print e
 
-def evaluate_letor(feature_file, prediction_file, output_file, flag=0):
-  command = ['perl', letor_eval_scrpit_path,
-             feature_file,
-             prediction_file,
-             output_file,
-             str(flag)]
-  run(command)
 
-  with open(output_file, 'r') as f:
-    met = f.read()
-  return met
-
-#def grep_on_output_command(string, )
 def evaluate_trec(qrels, res):
 
   ''' all_trecs, '''
   command = [trec_eval_script_path, '-m', 'all_trec', '-M', '1000', qrels, res]
   output = run(command, get_ouput=True)
-  gd_command = [gd_eval_script_path, qrels, res]
-  # gd_output = run(gd_command, get_ouput=True)
 
   MAP = re.findall(r'map\s+all.+\d+', output)[0].split('\t')[2].strip()
   P20 = re.findall(r'P_20\s+all.+\d+', output)[0].split('\t')[2].strip()
@@ -54,7 +36,9 @@ def evaluate_trec(qrels, res):
 
   return MAP, P20, NDCG20
 
+
 def evaluate_trec_per_query(qrels, res):
+
   command = [trec_eval_script_path, '-q', qrels, res]
   output = run(command, get_ouput=True)
   gd_command = [gd_eval_script_path, qrels, res] #+ " | awk -F',' '{print $3}'"
