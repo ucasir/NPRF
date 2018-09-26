@@ -26,10 +26,10 @@ If you use the code, please cite the following paper:
 ## Getting started
 
 ### Training data preparation
-To capture the top-k terms from top-n documents, one needs to extract the document frequency of each terms from index. Later, you are required to generate the similarity matrix between the query and document given the pre-trained word embedding (e.g. word2vec). Related functions can be found in preprocess/prepare_d2d.py.
+To capture the top-k terms from top-n documents, one needs to extract term document frequency from index. Afterwards, you are required to generate the similarity matrix upon the query and document given the pre-trained word embedding (e.g. word2vec). Related functions can be found in preprocess/prepare_d2d.py.
 
 ### Training meta data preparation
-We create two classes for the ease to training. The class **Relevance** incorporate the relevance information from the baseline and qrels file. The class **Result** simplify the write and read operation on TREC-formatted result file. Other information like query idf is dumped as a pickle file.
+We create two classes for the ease of training. The class **Relevance** incorporates the relevance information from the baseline and qrels file. The class **Result** simplify the write/read operation on standard TREC result file. Other information like query idf is dumped as a pickle file.
 
 
 ### Model training
@@ -37,9 +37,9 @@ Configure the MODEL_config.py file, then run
 ```
 python MODEL.py --fold fold_number temp_file_path
 ```
-You need to run 5-fold cross valiation, which can be automatically done by running the *runfold.sh* script. The temp file is a temporary file to write the result of the validation set in TREC format. One sample training log on TREC1-3 dataset is provided for reference, see [sample_log](https://github.com/ucasir/NPRF/blob/master/sample_log).
+You need to run 5-fold cross valiation, which can be automatically done by running the *runfold.sh* script. The temp file is a temporary file to write the result of the validation set in TREC format. One sample training log on TREC 1-3 dataset is provided for reference, see [sample_log](https://github.com/ucasir/NPRF/blob/master/sample_log).
 ### Evaluation
-After training, the evaluation result of each fold is retained in the result path as you specify in the MODEL_config.py file. One can simply run `cat *res >> merge_file` to merge results from all folds. Afterwards, run the [trec_eval](https://trec.nist.gov/trec_eval/) script to evaluate your model.
+After training, the evaluation result of each fold is retained in the result path as you specify in the MODEL_config.py file. One can simply run `cat *res >> merge_file` to merge results from all folds. Thereafter, run the [trec_eval](https://trec.nist.gov/trec_eval/) script to evaluate your model.
 
 
 ## Reference
