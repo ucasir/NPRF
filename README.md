@@ -1,5 +1,5 @@
 # NPRF
-NPRF: A Neural Pseudo Relevance Feedback Framework for Ad-hoc Information Retrieval
+NPRF: A Neural Pseudo Relevance Feedback Framework for Ad-hoc Information Retrieval [pdf](http://aclweb.org/anthology/D18-1478)
 
 <p align="center"> 
 <img src="https://github.com/ucasir/NPRF/blob/master/NPRF-arch.jpg" width="600" align="center">
